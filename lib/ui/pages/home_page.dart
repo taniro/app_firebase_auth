@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final auth_service = Provider.of<AuthService>(context, listen: false);
+    final authService = Provider.of<AuthService>(context, listen: false);
 
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.primaryContainer,
@@ -17,9 +17,9 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Hello ! ${auth_service.getCurrentUser()}"),
+            Text("Hello ! ${authService.getCurrentUserEmail()}"),
             CustomButton(height: 200, text: "Logout", onClick: ()=> {
-                auth_service.signOut()
+                authService.signOut()
             })
           ],
         ),

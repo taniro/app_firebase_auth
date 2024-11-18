@@ -58,7 +58,7 @@ class _RegisterPageState extends State<RegisterPage> {
               size: 150,
               color: Theme.of(context).colorScheme.primary,
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             Text(
               "Vamos criar uma nova conta!",
               style: TextStyle(
@@ -66,18 +66,18 @@ class _RegisterPageState extends State<RegisterPage> {
                 color: Theme.of(context).colorScheme.primary,
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             CustomTextFormField(
               labelText: "Usuário",
               controller: emailController,
             ),
-            SizedBox(height: 10),
-            CustomPassordFormField(
+            const SizedBox(height: 10),
+            CustomPasswordFormField(
               labelText: "Senha",
               controller: passwordController,
             ),
-            SizedBox(height: 10),
-            CustomPassordFormField(
+            const SizedBox(height: 10),
+            CustomPasswordFormField(
               labelText: "Confirmar Senha",
               controller: rePasswordController,
             ),
@@ -94,7 +94,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   style:
                   TextStyle(color: Theme.of(context).colorScheme.primary),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 5,
                 ),
                 GestureDetector(

@@ -27,10 +27,9 @@ class AuthService{
 
   Future<void> resetPassword(String email) async {
     try {
-      await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
-      print('E-mail de recuperação enviado');
-    } catch (e) {
-      print('Erro ao enviar e-mail de recuperação: $e');
+      await _firebaseAuth.sendPasswordResetEmail(email: email);
+    } on FirebaseAuthException catch (e) {
+      throw Exception(e.message);
     }
   }
 
@@ -38,15 +37,15 @@ class AuthService{
     return await _firebaseAuth.signOut();
   }
 
-  String? getCurrentUser(){
+  String? getCurrentUserEmail(){
     return _firebaseAuth.currentUser!.email;
   }
 
   Future<void> signInAnonymously() async {
     try {
-      await FirebaseAuth.instance.signInAnonymously();
-    } catch (e) {
-      print('Erro ao fazer login anônimo: $e');
+      await _firebaseAuth.signInAnonymously();
+    } on FirebaseAuthException catch (e) {
+      throw Exception(e.message);
     }
   }
 

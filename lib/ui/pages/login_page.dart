@@ -20,10 +20,10 @@ class _LoginPageState extends State<LoginPage> {
   final passwordController = TextEditingController();
 
   void signIn() async {
-    final auth_service = Provider.of<AuthService>(context, listen: false);
+    final authService = Provider.of<AuthService>(context, listen: false);
 
     try {
-      await auth_service.signInWithEmailAndPassword(
+      await authService.signInWithEmailAndPassword(
         emailController.value.text,
         passwordController.value.text,
       );
@@ -56,11 +56,11 @@ class _LoginPageState extends State<LoginPage> {
               size: 150,
               color: Theme.of(context).colorScheme.primary,
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             CustomTextFormField(
                 labelText: "Usuário", controller: emailController),
-            SizedBox(height: 10),
-            CustomPassordFormField(
+            const SizedBox(height: 10),
+            CustomPasswordFormField(
                 labelText: "Senha", controller: passwordController),
             CustomButton(
               text: "Entrar",
@@ -75,7 +75,7 @@ class _LoginPageState extends State<LoginPage> {
                   style:
                   TextStyle(color: Theme.of(context).colorScheme.primary),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 5,
                 ),
                 GestureDetector(

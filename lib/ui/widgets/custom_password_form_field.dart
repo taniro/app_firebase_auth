@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class CustomPassordFormField extends StatefulWidget {
+class CustomPasswordFormField extends StatefulWidget {
   final String labelText;
   final String? Function(String?)? validateFunction;
   final TextEditingController? controller;
   final TextInputType? keyboardType;
 
-  CustomPassordFormField({
+  CustomPasswordFormField({
     super.key,
     required this.labelText,
     this.validateFunction,
@@ -15,10 +15,10 @@ class CustomPassordFormField extends StatefulWidget {
   });
 
   @override
-  State<CustomPassordFormField> createState() => _CustomPassordFormFieldState();
+  State<CustomPasswordFormField> createState() => _CustomPassordFormFieldState();
 }
 
-class _CustomPassordFormFieldState extends State<CustomPassordFormField> {
+class _CustomPassordFormFieldState extends State<CustomPasswordFormField> {
   late bool obscured = true;
 
   @override

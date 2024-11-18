@@ -13,7 +13,7 @@ class AuthChecker extends StatelessWidget {
       body: StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) =>
-        snapshot.hasData ? HomePage() : LoginOrRegisterPage(),
+        snapshot.hasData ? const HomePage() : const LoginOrRegisterPage(),
       ),
     );
   }
