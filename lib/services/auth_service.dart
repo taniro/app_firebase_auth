@@ -49,5 +49,9 @@ class AuthService{
     }
   }
 
+  String getCurrentUser() {
+    return _firebaseAuth.currentUser!.uid;
+  }
+
 }
 
