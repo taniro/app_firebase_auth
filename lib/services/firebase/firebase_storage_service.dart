@@ -28,9 +28,9 @@ class FirebaseStorageService {
     return null;
   }
 
-  Future<void> deleteFile(String path) async {
+  Future<void> deleteFile(String storagePath) async {
     try {
-      await FirebaseStorage.instance.ref(path).delete();
+      await _firebaseStorage.ref(storagePath).delete();
     } catch (e) {
       print('Erro ao deletar arquivo: $e');
     }
