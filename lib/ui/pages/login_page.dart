@@ -1,4 +1,4 @@
-import 'package:app_firebase_auth/services/auth_service.dart';
+import 'package:app_firebase_auth/services/firebase/auth_service.dart';
 import 'package:app_firebase_auth/ui/widgets/custom_password_form_field.dart';
 import 'package:app_firebase_auth/ui/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';

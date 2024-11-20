@@ -1,6 +1,7 @@
 import 'package:app_firebase_auth/theme/theme.dart';
 import 'package:app_firebase_auth/theme/util.dart';
 import 'package:app_firebase_auth/ui/widgets/auth_checker.dart';
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
 import 'package:firebase_core/firebase_core.dart';
@@ -17,6 +18,8 @@ Future<void> main() async{
   );
 
   final data = await ConfigureProviders.createDependencyTree();
+
+  final cameras = await availableCameras();
 
   runApp(AppRoot(data: data));
 }

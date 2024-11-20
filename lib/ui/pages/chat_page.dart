@@ -1,6 +1,8 @@
-import 'package:app_firebase_auth/services/auth_service.dart';
-import 'package:app_firebase_auth/services/store_service.dart';
+import 'package:app_firebase_auth/services/firebase/auth_service.dart';
+import 'package:app_firebase_auth/services/firebase/cloud_firestore_service.dart';
+import 'package:app_firebase_auth/ui/pages/take_picture_page.dart';
 import 'package:app_firebase_auth/ui/widgets/message_item.dart';
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -15,13 +17,13 @@ class ChatPage extends StatefulWidget {
 
 class _ChatPageState extends State<ChatPage> {
   final _messageController = TextEditingController();
-  late final StoreService chatService;
+  late final CloudFiretoreService chatService;
   late final AuthService authService;
 
   @override
   void initState() {
     super.initState();
-    chatService = Provider.of<StoreService>(context, listen: false);
+    chatService = Provider.of<CloudFiretoreService>(context, listen: false);
     authService = Provider.of<AuthService>(context, listen: false);
   }
 
@@ -94,13 +96,32 @@ class _ChatPageState extends State<ChatPage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(2.0),
                 child: Container(
                   color: Theme.of(context).colorScheme.primary,
                   child: IconButton(
                       onPressed: sendMessage,
                       icon: Icon(
                         Icons.arrow_upward,
+                        color: Theme.of(context).colorScheme.onPrimary,
+                      )),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(2.0),
+                child: Container(
+                  color: Theme.of(context).colorScheme.primary,
+                  child: IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const TakePicturePage(),
+                          ),
+                        );
+                      },
+                      icon: Icon(
+                        Icons.camera_alt,
                         color: Theme.of(context).colorScheme.onPrimary,
                       )),
                 ),

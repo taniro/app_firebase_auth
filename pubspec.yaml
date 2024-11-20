@@ -41,6 +41,11 @@ dependencies:
   google_fonts: ^6.2.1
   cloud_firestore: ^5.5.0
   chat_bubbles: ^1.6.0
+  permission_handler: ^11.3.1
+  geolocator: ^13.0.2
+  path_provider: ^2.1.5
+  camera: ^0.11.0+2
+  firebase_storage: ^12.3.6
 
 dev_dependencies:
   flutter_test:
